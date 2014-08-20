@@ -18,7 +18,6 @@
 		D8478090193F52D8005FEBA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8478075193F52D8005FEBA5 /* Foundation.framework */; };
 		D8478091193F52D8005FEBA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8478079193F52D8005FEBA5 /* UIKit.framework */; };
 		D8478099193F52D8005FEBA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8478097193F52D8005FEBA5 /* InfoPlist.strings */; };
-		D847809B193F52D8005FEBA5 /* cartoonCollectionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D847809A193F52D8005FEBA5 /* cartoonCollectionsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		D847808E193F52D8005FEBA5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D8478096193F52D8005FEBA5 /* cartoonCollectionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cartoonCollectionsTests-Info.plist"; sourceTree = "<group>"; };
 		D8478098193F52D8005FEBA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D847809A193F52D8005FEBA5 /* cartoonCollectionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cartoonCollectionsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 		D8478094193F52D8005FEBA5 /* cartoonCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D847809A193F52D8005FEBA5 /* cartoonCollectionsTests.m */,
 				D8478095193F52D8005FEBA5 /* Supporting Files */,
 			);
 			path = cartoonCollectionsTests;
@@ -249,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D847809B193F52D8005FEBA5 /* cartoonCollectionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +434,7 @@
 				D84780A0193F52D8005FEBA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D84780A1193F52D8005FEBA5 /* Build configuration list for PBXNativeTarget "cartoonCollectionsTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +443,7 @@
 				D84780A3193F52D8005FEBA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

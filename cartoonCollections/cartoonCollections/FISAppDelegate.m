@@ -37,27 +37,57 @@
 
 - (NSString *)rollCallDwarves:(NSArray *)dwarves
 {
-    return nil;
+    NSMutableString *dwarfString = [[NSMutableString alloc] init];
+    for (int count = 0; count < dwarves.count; count++) {
+        [dwarfString appendFormat:@"%i. %@", count + 1, dwarves[count]];
+        if (count < dwarves.count-1) {
+            [dwarfString appendString:@" | "];
+        }
+    }
+    
+    return dwarfString;
 }
 
 - (NSArray *)summonCaptainPlanet:(NSArray *)planteerCalls
 {
-    return nil;
+    NSMutableArray *modifiedCalls = [[NSMutableArray alloc] init];
+    for (NSString *call in planteerCalls) {
+        NSString *modifiedCall = [NSString stringWithFormat:@"%@!",[call uppercaseString]];
+        [modifiedCalls addObject:modifiedCall];
+    }
+    return modifiedCalls;
 }
 
 - (NSArray *)longPlaneteerCalls:(NSArray *)planteerCalls
 {
-    return nil;
+    NSMutableArray *longCalls = [[NSMutableArray alloc] init];
+    for (NSString *currentCall in planteerCalls) {
+        if (currentCall.length > 4) {
+            [longCalls addObject:currentCall];
+        }
+    }
+    
+    return longCalls;
 }
 
 - (NSString *)findTheCheese:(NSArray *)cheeses
 {
+    for (NSString *cheese in cheeses) {
+        if ([cheese isEqualToString:@"cheddar"] || [cheese isEqualToString:@"gouda"] || [cheese isEqualToString:@"cambert"]) {
+            return cheese;
+        }
+    }
     return nil;
 }
 
 - (NSArray *)calculateDollarAmountsWithReceipt:(NSArray *)receipt
 {
-    return nil;
+    NSMutableArray *convertedArray = [[NSMutableArray alloc] init];
+    for (NSString *item in receipt) {
+        NSString *convertedItem = [NSString stringWithFormat:@"$%lu", (unsigned long)item.length];
+        [convertedArray addObject:convertedItem];
+    }
+    return convertedArray;
 }
 
 
