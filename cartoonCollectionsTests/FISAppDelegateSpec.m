@@ -38,7 +38,7 @@ describe(@"FISAppDelegate", ^{
             });
         });
         
-        describe(@"sumonCaptainPlanet:", ^{
+        describe(@"summonCaptainPlanet:", ^{
             __block NSArray *callsToBeGivenWithHeart;
             
             beforeAll(^{
@@ -61,7 +61,7 @@ describe(@"FISAppDelegate", ^{
                 callsToBeGivenWithHeart = @[@"earth",@"wind"];
             });
             
-            it(@"should take in a list of planteerCalls and returns the list of planeteer calls that have more then 4 characters",^{
+            it(@"should take in a list of planeteerCalls and returns the list of planeteerCalls that have more then 4 characters",^{
                 expect([appDelegate longPlaneteerCalls:callsToBeGivenWithHeart]).to.equal(@[@"earth"]);
             });
         
@@ -74,11 +74,11 @@ describe(@"FISAppDelegate", ^{
             __block NSArray *possibleCheeses;
             
             beforeAll(^{
-                possibleCheeses = @[@"prosciutto", @"cambert", @"baguette"];
+                possibleCheeses = @[@"prosciutto", @"camembert", @"baguette"];
             });
             
-            it(@"should look through the NSArray of NSStrings and find the first string that matches one of the following cheese strings: 'cheddar', 'gouda', or 'cambert'. It should then return the NSString of the resulting search. If it doesn't find anything, return nil",^{
-                expect([appDelegate findTheCheese:possibleCheeses]).to.equal(@"cambert");
+            it(@"should look through the NSArray of NSStrings and find the first string that matches one of the following cheese strings: 'cheddar', 'gouda', or 'camembert'. It should then return the NSString of the resulting search. If it doesn't find anything, return nil",^{
+                expect([appDelegate findTheCheese:possibleCheeses]).to.equal(@"camembert");
                 expect([appDelegate findTheCheese:@[@"prosciutto", @"baguette"]]).to.beNil();
             });
         

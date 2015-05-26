@@ -27,7 +27,7 @@ language: objc
   1. Doc | 2. Dopey | 3. Bashful
   ```
 
-  2. Write the `summonCaptainPlanet:(NSArray *)planteerCalls` method. This method should take an `NSArray` of forces. These forces a bit lackluster...let's give them some hart and make them all caps and an exclamation point after to show we really mean it! Return another `NSArray` with a capitalized and exclamation point after. So for example the following `NSArray`:
+  2. Write the `summonCaptainPlanet:(NSArray *)planeteerCalls` method. This method should take an `NSArray` of forces. These forces a bit lackluster...let's give them some hart and make them all caps and an exclamation point after to show we really mean it! Return another `NSArray` with a capitalized and exclamation point after. So for example the following `NSArray`:
 
   ```
   @[@"earth",@"wind"]
@@ -39,7 +39,7 @@ language: objc
   @[@"EARTH!", @"WIND!"]
   ```
 
-  3. Write the `longPlaneteerCalls:(NSArray *)planteerCalls` method. The planeteer calls are supposed to be short so let's find out if any of our calls have more than 4 characters. This method takes in a list of planteerCalls and returns the list of planeteer calls that have more then 4 characters. So for example the following `NSArray`:
+  3. Write the `longPlaneteerCalls:(NSArray *)planeteerCalls` method. The planeteerCalls are supposed to be short so let's find out if any of our planeteerCalls have more than 4 characters. This method takes in a list of planeteerCalls and returns the list of planeteerCalls that have more then 4 characters. So for example the following `NSArray`:
 
   ```
   @[@"earth",@"wind"]
@@ -51,7 +51,7 @@ language: objc
   @[@"earth"]
   ```
 
-  4. Write the `findTheCheese:(NSArrray *)cheeses` method. This method should look through the `NSArray` of `NSString`s and find the first string that matches one of the following cheese strings: `@"cheddar", @"gouda", or @"cambert"`. It should then return the `NSString` of the resulting search. If it doesn't find anything, return `nil`.
+  4. Write the `findTheCheese:(NSArrray *)cheeses` method. This method should look through the `NSArray` of `NSString`s and find the first string that matches one of the following cheese strings: `@"cheddar", @"gouda", or @"camembert"`. It should then return the `NSString` of the resulting search. If it doesn't find anything, return `nil`.
 
   5. Write the `calculateDollarAmountsWithReceipt:(NSArray *)receipt` method. This method should keep help someone keep track of their money. Sadly...people keep their receipts in a weird way. They keep in them in an `NSArray` that looks like this:
 

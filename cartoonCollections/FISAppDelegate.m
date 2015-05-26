@@ -25,7 +25,7 @@
 
     NSLog(@"%@",[self longPlaneteerCalls:callsToBeGivenWithHeart]);
 
-    NSArray *possibleCheeses= @[@"prosciutto", @"cambert", @"baguette"];
+    NSArray *possibleCheeses= @[@"prosciutto", @"camembert", @"baguette"];
     NSLog(@"%@",[self findTheCheese:possibleCheeses]);
 
     NSArray *scroogesMoney = @[@"$$",@"$",@"$$$"];
@@ -40,12 +40,12 @@
     return nil;
 }
 
-- (NSArray *)summonCaptainPlanet:(NSArray *)planteerCalls
+- (NSArray *)summonCaptainPlanet:(NSArray *)planeteerCalls
 {
     return nil;
 }
 
-- (NSArray *)longPlaneteerCalls:(NSArray *)planteerCalls
+- (NSArray *)longPlaneteerCalls:(NSArray *)planeteerCalls
 {
     return nil;
 }
