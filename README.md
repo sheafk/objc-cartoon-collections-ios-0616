@@ -27,7 +27,7 @@ language: objc
   1. Doc | 2. Dopey | 3. Bashful
   ```
 
-  2. Write the `summonCaptainPlanet:(NSArray *)planteerCalls` method. This method should take an `NSArray` of forces. These forces a bit lackluster...let's give them some hart and make them all caps and an exclamation point after to show we really mean it! Return another `NSArray` with a capitalized and exclamation point after. So for example the following `NSArray`:
+  2. Write the `summonCaptainPlanet:(NSArray *)planeteerCalls` method. This method should take an `NSArray` of forces. These forces a bit lackluster...let's give them some hart and make them all caps and an exclamation point after to show we really mean it! Return another `NSArray` with a capitalized and exclamation point after. So for example the following `NSArray`:
 
   ```
   @[@"earth",@"wind"]
