@@ -39,7 +39,7 @@ language: objc
   @[@"EARTH!", @"WIND!"]
   ```
 
-  3. Write the `longPlaneteerCalls:(NSArray *)planteerCalls` method. The planeteer calls are supposed to be short so let's find out if any of our calls have more than 4 characters. This method takes in a list of planteerCalls and returns the list of planeteer calls that have more then 4 characters. So for example the following `NSArray`:
+  3. Write the `longPlaneteerCalls:(NSArray *)planeteerCalls` method. The planeteerCalls are supposed to be short so let's find out if any of our planeteerCalls have more than 4 characters. This method takes in a list of planeteerCalls and returns the list of planeteerCalls that have more then 4 characters. So for example the following `NSArray`:
 
   ```
   @[@"earth",@"wind"]
