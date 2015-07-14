@@ -19,90 +19,140 @@ describe(@"FISAppDelegate", ^{
         __block FISAppDelegate *appDelegate;
         
         beforeAll(^{
-            appDelegate = [UIApplication sharedApplication].delegate;
+            appDelegate = [[FISAppDelegate alloc] init];
         });
         
-        describe(@"rollCallDwarves:", ^{
-            __block NSArray *dwarvesToBeRollCalled;
+        describe(@"stringByRollCallingDwarfsInArray:", ^{
+            __block NSArray *dwarfsToBeRollCalled;
+            __block NSString *expectedRollCall;
             
-            beforeAll(^{
-                dwarvesToBeRollCalled = @[@"Doc",@"Dopey",@"Bashful"];
-            });
-            
-            it(@"should take in an NSArray of dwarves and returns a roll call sheet with their number",^{
-                expect([appDelegate rollCallDwarves:dwarvesToBeRollCalled]).to.equal(@"1. Doc | 2. Dopey | 3. Bashful");
-            });
-        
-            it(@"should return an NSString",^{
-                expect([appDelegate rollCallDwarves:dwarvesToBeRollCalled]).to.beKindOf([NSString class]);
-            });
-        });
-        
-        describe(@"sumonCaptainPlanet:", ^{
-            __block NSArray *callsToBeGivenWithHeart;
-            
-            beforeAll(^{
-                callsToBeGivenWithHeart = @[@"earth",@"wind"];
+            beforeEach(^{
+                dwarfsToBeRollCalled = @[ @"Doc"     ,
+                                          @"Grumpy"  ,
+                                          @"Happy"   ,
+                                          @"Sleepy"  ,
+                                          @"Bashful" ,
+                                          @"Sneezy"  ,
+                                          @"Dopey"   ];
+                
+                expectedRollCall = @"1. Doc | 2. Grumpy | 3. Happy | 4. Sleepy | 5. Bashful | 6. Sneezy | 7. Dopey";
             });
             
-            it(@"should take an NSArray of forces and return another NSArray with a capitalized and exclamation point after",^{
-                expect([appDelegate summonCaptainPlanet:callsToBeGivenWithHeart]).to.equal(@[@"EARTH!", @"WIND!"]);
+            it(@"returns an NSString object",^{
+                expect([appDelegate stringByRollCallingDwarfsInArray:dwarfsToBeRollCalled]).to.beKindOf([NSString class]);
             });
-        
-            it(@"should return an NSArray",^{
-                expect([appDelegate summonCaptainPlanet:callsToBeGivenWithHeart]).to.beKindOf([NSArray class]);
+
+            it(@"returns a string of all of the dwarfs' names with a number prefix and separated by a '|' symbol",^{
+                expect([appDelegate stringByRollCallingDwarfsInArray:dwarfsToBeRollCalled]).to.equal(expectedRollCall);
             });
         });
         
-        describe(@"longPlaneteerCalls:", ^{
-            __block NSArray *callsToBeGivenWithHeart;
+        describe(@"arrayOfPlaneteerShoutsFromArray:", ^{
+            __block NSArray *powersToBeCombined;
+            __block NSArray *powersAsShouts;
             
-            beforeAll(^{
-                callsToBeGivenWithHeart = @[@"earth",@"wind"];
+            beforeEach(^{
+                powersToBeCombined = @[ @"earth" ,
+                                        @"fire"  ,
+                                        @"wind"  ,
+                                        @"water" ,
+                                        @"heart" ];
+                
+                powersAsShouts = @[ @"EARTH!" ,
+                                    @"FIRE!"  ,
+                                    @"WIND!"  ,
+                                    @"WATER!" ,
+                                    @"HEART!" ];
+            });
+            it(@"returns an NSArray object",^{
+                expect([appDelegate arrayOfPlaneteerShoutsFromArray:powersToBeCombined]).to.beKindOf([NSArray class]);
             });
             
-            it(@"should take in a list of planteerCalls and returns the list of planeteer calls that have more then 4 characters",^{
-                expect([appDelegate longPlaneteerCalls:callsToBeGivenWithHeart]).to.equal(@[@"earth"]);
-            });
-        
-            it(@"should return an NSArray",^{
-                expect([appDelegate longPlaneteerCalls:callsToBeGivenWithHeart]).to.beKindOf([NSArray class]);
+            it(@"returns the string in the submitted array as shouts",^{
+                expect([appDelegate arrayOfPlaneteerShoutsFromArray:powersToBeCombined]).to.equal(powersAsShouts);
             });
         });
         
-        describe(@"findTheCheese:", ^{
-            __block NSArray *possibleCheeses;
+        describe(@"summonCaptainPlanetWithPowers:", ^{
+            __block NSArray *powersToBeCombined;
+            __block NSString *captainPlanetSummons;
             
-            beforeAll(^{
-                possibleCheeses = @[@"prosciutto", @"cambert", @"baguette"];
+            beforeEach(^{
+                powersToBeCombined = @[ @"earth" ,
+                                        @"fire"  ,
+                                        @"wind"  ,
+                                        @"water" ,
+                                        @"heart" ];
+                
+                captainPlanetSummons = @"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!";
+            });
+            it(@"returns an NSString object",^{
+                expect([appDelegate summonCaptainPlanetWithPowers:powersToBeCombined]).to.beKindOf([NSString class]);
             });
             
-            it(@"should look through the NSArray of NSStrings and find the first string that matches one of the following cheese strings: 'cheddar', 'gouda', or 'cambert'. It should then return the NSString of the resulting search. If it doesn't find anything, return nil",^{
-                expect([appDelegate findTheCheese:possibleCheeses]).to.equal(@"cambert");
-                expect([appDelegate findTheCheese:@[@"prosciutto", @"baguette"]]).to.beNil();
-            });
-        
-            it(@"should return an NSString",^{
-                expect([appDelegate findTheCheese:possibleCheeses]).to.beKindOf([NSString class]);
+            it(@"returns the Planeteers' call to summon Captain Planet",^{
+                expect([appDelegate summonCaptainPlanetWithPowers:powersToBeCombined]).to.equal(@"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!");
             });
         });
         
-        describe(@"calculateDollarAmountsWithReceipt:", ^{
-            __block NSArray *scroogesMoney;
+        describe(@"findFirstPremiumCheeses:inCheesesInStock:", ^{
+            __block NSString *camembert;
+            __block NSArray *premiumCheeses;
+            __block NSArray *cheesesInStock;
             
-            beforeAll(^{
-                scroogesMoney = @[@"$$",@"$",@"$$$"];
+            beforeEach(^{
+                camembert = @"camembert";
+                
+                premiumCheeses = @[ @"brie"      ,
+                                    camembert    ,
+                                    @"jarlsberg" ];
+                
+                cheesesInStock = @[ @"cheddar"       ,
+                                    camembert        ,
+                                    @"string cheese" ];
+            });
+            it(@"returns an NSString object",^{
+                expect([appDelegate findFirstOfPremiumCheeses:premiumCheeses
+                                             inCheesesInStock:cheesesInStock]).to.beKindOf([NSString class]);
             });
             
-            it(@"should take an array like that in, and should return another array converted to monetary values",^{
-                expect([appDelegate calculateDollarAmountsWithReceipt:scroogesMoney
-                        ]).to.equal(@[@"$2",@"$1",@"$3"]);
+            it(@"returns the first string in the first argument array that is also in the second argument array", ^{
+                expect([appDelegate findFirstOfPremiumCheeses:premiumCheeses
+                                             inCheesesInStock:cheesesInStock]).to.equal(camembert);
             });
+            
+            it(@"returns an error string when no contents of the first array match the contents of the second array", ^{
+                expect([appDelegate findFirstOfPremiumCheeses:@[@"gorgonzola"]
+                                             inCheesesInStock:cheesesInStock]).to.equal(@"No premium cheeses in stock.");
+            });
+        });
         
-            it(@"should return an NSArray",^{
-                expect([appDelegate calculateDollarAmountsWithReceipt:scroogesMoney
+        describe(@"arrayByConvertingMoneyBagsIntoPaperBills:", ^{
+            __block NSArray *scroogesMoneyBags;
+            __block NSArray *scroogesPaperBills;
+            
+            beforeEach(^{
+                scroogesMoneyBags = @[ @"$$$$$"      ,
+                                       @"$"          ,
+                                       @"$$"         ,
+                                       @"$$$$$$$$$$" ];
+                
+                scroogesPaperBills = @[ @"$5"  ,
+                                        @"$1"  ,
+                                        @"$2"  ,
+                                        @"$10" ];
+            });
+            
+            it(@"returns an NSArray object",^{
+                expect([appDelegate arrayByConvertingMoneyBagsIntoPaperBills:scroogesMoneyBags
                         ]).to.beKindOf([NSArray class]);
             });
+            
+            it(@"returns on array of numerical strings equivalent to the counts of the dollar signs in the submitted array's strings",^{
+                expect([appDelegate arrayByConvertingMoneyBagsIntoPaperBills:scroogesMoneyBags
+                        ]).to.equal(scroogesPaperBills);
+            });
+        
         });
     });
 });
