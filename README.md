@@ -1,71 +1,46 @@
----
-tags: arrays, beginner, methods
-language: objc
----
-
 # Cartoon Collections
 
-## Submitting This Lab
+## Objectives
 
-  1. Fork the lab.
-  2. Work with the person next to you, or people around you. No more than 3 to a group.
-  3. When you are done submit a single pull-request for your team back to the main repo on flatiron-school-students
-  4. Include in the pull-request description who you worked with!
-  5. [Celebrate!](https://www.youtube.com/watch?v=StTqXEQ2l-Y&feature=kp)
+1. Practice utilizing the debugging suite while exercising what you've already learned.
+
+## Introduction
+
+This lab contains a few code challenges based upon manipulating strings and arrays in different ways by using loops and conditionals; it's all stuff you should already have practiced with. Now, get practice incorporating your new knowledge of debugging tools into your workflow. Use `NSLog()`, breakpoints, `po` in the console, and the variable viewer to get glimpses inside your code as it's running.
 
 ## Instructions
 
-  1. Write `rollCallDwarves:(NSArray *)dwarves`. This method should take in an NSArray of dwarves and returns a roll call sheet with their number. I'd recommend using a standard `for` loop for this. This is a roll call sheet for HUMANS so please start counting at 1. For example given the following array:
+Open the `*.xcworkspace` file and navigate to the `FISAppDelegate.h` header file to declare the following methods:
 
-  ```
-  @[@"Doc",@"Dopey",@"Bashful"]
-  ```
+* `stringByRollCallingDwarfsInArray:` that takes one `NSArray` argument called `dwarfs` and returns an `NSString`.
 
-  return an `NSMutableString` that looks like this:
+* `arrayOfPlaneteerShoutsFromArray:` that takes one `NSArray` argument called `powers` and returns an `NSArray`.
 
-  ```
-  1. Doc | 2. Dopey | 3. Bashful
-  ```
+* `summonCaptainPlanetWithPowers:` that takes one `NSArray` argument called `powers` and returns an `NSString`.
 
-  2. Write the `summonCaptainPlanet:(NSArray *)planeteerCalls` method. This method should take an `NSArray` of forces. These forces a bit lackluster...let's give them some hart and make them all caps and an exclamation point after to show we really mean it! Return another `NSArray` with a capitalized and exclamation point after. So for example the following `NSArray`:
+* `findFirstOfPremiumCheeses:inCheesesInStock:` that takes two `NSArray` arguments called `premiumCheeses` and `cheesesInStock`, and returns an `NSString`.
 
-  ```
-  @[@"earth",@"wind"]
-  ```
+* `arrayByConvertingMoneyBagsIntoPaperBills:` that takes one `NSArray` argument `moneyBags` and returns an `NSArray`.
 
-  would turn into:
+Navigate to the `FISAppDelegate.m` implementation file and declare each method to return `nil`. Run the tests (`⌘``U`) to see that they fail. Solve each method implementation to pass the test:
 
-  ```
-  @[@"EARTH!", @"WIND!"]
-  ```
+1. To improve workplace safety, Doc has suggested that the [seven dwarfs][snow_white_film] roll call themselves when entering or leaving the mine. Write the implementation for `stringByRollCallingDwarfsInArray:` to take the array of dwarf names and create a string that gives each dwarf a list number (`1.` to `7.`), and separates each number & name with a `|` ("pipe"). Look at the test file to see exactly what you need to generate, but don't hard code the answer! Create the expected string programmatically by appending each dwarf's name in an interpolated string.
 
-  3. Write the `longPlaneteerCalls:(NSArray *)planeteerCalls` method. The planeteerCalls are supposed to be short so let's find out if any of our planeteerCalls have more than 4 characters. This method takes in a list of planeteerCalls and returns the list of planeteerCalls that have more then 4 characters. So for example the following `NSArray`:
+2. Let's help the [Planeteers][captain_planet] get the gusto they need to summon Captain Planet! Write the implementation of `arrayOfPlaneteerShoutsFromArray:` to take each of the five Planeteer's powers in the argument array and convert them into uppercase while adding an `!` ("exclamation point") to the end. Return the array of altered strings. Again, don't hard code the answer. Solve this problem programmatically with loops and string interpolation!
 
-  ```
-  @[@"earth",@"wind"]
-  ```
+3. Now that the Planeteers have practiced their shouts, they need to combine their powers to take pollution down to zero! Write the implementation for `summonCaptainPlanetWithPowers:` to take the five Planeteers' powers and combine them into the Planeteer phrase that summons Captain Planet!
 
-  would return:
+    * The phrase begins with "Let our powers combine:",
+    * Then each Planeteer shouts their power in sequence,
+    * Then the phrase ends with "Go Planet!".  
+    * Each piece of the phrase should be separated by a new line (`\n`), and don't forget to capitalize "Planet!" as proper noun.  
+**Hint:** *You could try calling the method you just wrote inside this method implementation by calling* `[self arrayOfPlaneteerShoutsFromArray:powers]` *and capturing its return. Sending a method call to* `self`, *in this case, tells our* `FISAppDelegate` *object to call a method on itself.*
 
-  ```
-  @[@"earth"]
-  ```
+4. [Jerry Mouse][tom_and_jerry] has expensive taste in cheese and he only eats the best. Write the implementation for `findFirstOfPremiumCheeses:inCheesesInStock:` to compare the two argument arrays and return the first cheese in `premiumCheeses` that is also in the `cheesesInStock` array. If there are no cheeses common to both arrays, then the method should return `nil` so Jerry knows to look somewhere else.
 
-  4. Write the `findTheCheese:(NSArrray *)cheeses` method. This method should look through the `NSArray` of `NSString`s and find the first string that matches one of the following cheese strings: `@"cheddar", @"gouda", or @"camembert"`. It should then return the `NSString` of the resulting search. If it doesn't find anything, return `nil`.
+5. [Scrooge McDuck][scrooge_mcduck] is a real financial conservative and still keeps his money in dollar coins! However, he's decided to try out this new thing called "paper bills" (he hears they're the next big thing); he's brought several bags (strings) of coins to you, a bank teller, to convert into paper money. Write the implementation for `arrayByConvertingMoneyBagsIntoPaperBills:` to count the dollar coins (one coin is represented by one `$`) in each string in Scrooge's array into an equivalent paper bill (a string in the manner of `@"$20"`). Look at the tests to clarify the scenario, but avoid hard coding the answer!
 
-  5. Write the `calculateDollarAmountsWithReceipt:(NSArray *)receipt` method. This method should keep help someone keep track of their money. Sadly...people keep their receipts in a weird way. They keep in them in an `NSArray` that looks like this:
-
-  ```
-  @[@"$$", @"$", @"$$$"]
-  ```
-
-  So this method takes an array like that in, and should return another array converted to monetary values (As `NSString`) So the previous `NSArray` would turn into this:
-
-  ```
-  @[@"$2",@"$1",@"$3"]
-  ```
-
-## Resources
-
-  * [Loops](https://mobileappmastery.com/objective-c-loops/)
-  * [Appending Strings](http://www.idev101.com/code/Objective-C/Strings/concat.html)
+[snow_white_film]: https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)
+[captain_planet]: https://en.wikipedia.org/wiki/Captain_Planet_and_the_Planeteers
+[tom_and_jerry]: https://en.wikipedia.org/wiki/Tom_and_Jerry
+[scrooge_mcduck]: https://en.wikipedia.org/wiki/Scrooge_McDuck
