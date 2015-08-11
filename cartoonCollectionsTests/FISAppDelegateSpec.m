@@ -37,7 +37,7 @@ describe(@"FISAppDelegate", ^{
                 
                 expectedRollCall = @"1. Doc | 2. Grumpy | 3. Happy | 4. Sleepy | 5. Bashful | 6. Sneezy | 7. Dopey";
             });
-            
+
             it(@"returns an NSString object",^{
                 expect([appDelegate stringByRollCallingDwarfsInArray:dwarfsToBeRollCalled]).to.beKindOf([NSString class]);
             });
@@ -96,7 +96,7 @@ describe(@"FISAppDelegate", ^{
             });
         });
         
-        describe(@"findFirstPremiumCheeses:inCheesesInStock:", ^{
+        describe(@"firstPremiumCheeseInStock:premiumCheeseNames:", ^{
             __block NSString *camembert;
             __block NSArray *premiumCheeses;
             __block NSArray *cheesesInStock;
@@ -114,18 +114,18 @@ describe(@"FISAppDelegate", ^{
             });
             
             it(@"returns an NSString object",^{
-                expect([appDelegate findFirstOfPremiumCheeses:premiumCheeses
-                                             inCheesesInStock:cheesesInStock]).to.beKindOf([NSString class]);
+                expect([appDelegate firstPremiumCheeseInStock:cheesesInStock
+                                           premiumCheeseNames:premiumCheeses]).to.beKindOf([NSString class]);
             });
             
             it(@"returns the first string in the first argument array that is also in the second argument array", ^{
-                expect([appDelegate findFirstOfPremiumCheeses:premiumCheeses
-                                             inCheesesInStock:cheesesInStock]).to.equal(camembert);
+                expect([appDelegate firstPremiumCheeseInStock:cheesesInStock
+                                           premiumCheeseNames:premiumCheeses]).to.equal(camembert);
             });
             
             it(@"returns an error string when no contents of the first array match the contents of the second array", ^{
-                expect([appDelegate findFirstOfPremiumCheeses:@[@"gorgonzola"]
-                                             inCheesesInStock:cheesesInStock]).to.equal(@"No premium cheeses in stock.");
+                expect([appDelegate firstPremiumCheeseInStock:cheesesInStock
+                                           premiumCheeseNames:@[ @"gorgonzola" ]]).to.equal(@"No premium cheeses in stock.");
             });
         });
         
