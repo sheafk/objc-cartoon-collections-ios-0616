@@ -18,7 +18,7 @@ Open the `*.xcworkspace` file and navigate to the `FISAppDelegate.h` header file
 
 * `summonCaptainPlanetWithPowers:` that takes one `NSArray` argument called `powers` and returns an `NSString`.
 
-* `findFirstOfPremiumCheeses:inCheesesInStock:` that takes two `NSArray` arguments called `premiumCheeses` and `cheesesInStock`, and returns an `NSString`.
+* `firstPremiumCheeseInStock:premiumCheeseNames:` that takes two `NSArray` arguments called `cheesesInStock` and `premiumCheeseNames`, and returns an `NSString`.
 
 * `arrayByConvertingMoneyBagsIntoPaperBills:` that takes one `NSArray` argument `moneyBags` and returns an `NSArray`.
 
@@ -37,7 +37,7 @@ Navigate to the `FISAppDelegate.m` implementation file and declare each method t
     * Each piece of the phrase should be separated by a new line (`\n`), and don't forget to capitalize "Planet!" as proper noun.  
 **Hint:** *You could try calling the method you just wrote inside this method implementation by calling* `[self arrayOfPlaneteerShoutsFromArray:powers]` *and capturing its return. Sending a method call to* `self`, *in this case, tells our* `FISAppDelegate` *object to call a method on itself.*
 
-4. [Jerry Mouse][tom_and_jerry] has expensive taste in cheese and he only eats the best. Write the implementation for `findFirstOfPremiumCheeses:inCheesesInStock:` to compare the two argument arrays and return the first cheese in `premiumCheeses` that is also in the `cheesesInStock` array. If there are no cheeses common to both arrays, then the method should return `@"No premium cheeses in stock."` so Jerry knows to look somewhere else.
+4. [Jerry Mouse][tom_and_jerry] has expensive taste in cheese and he only eats the best. Write the implementation for `firstPremiumCheeseInStock:premiumCheeseNames:` to compare the two argument arrays and return the first cheese in `premiumCheeseNames` that is also in the `cheesesInStock` array. If there are no cheeses common to both arrays, then the method should return `@"No premium cheeses in stock."` so Jerry knows to look somewhere else.
 
 5. [Scrooge McDuck][scrooge_mcduck] is a real financial conservative and still keeps his money in dollar coins! However, he's decided to try out this new thing called "paper bills" (he hears they're the next big thing); he's brought several bags (strings) of coins to you, a bank teller, to convert into paper money. Write the implementation for `arrayByConvertingMoneyBagsIntoPaperBills:` to count the dollar coins (one coin is represented by one `$`) in each string in Scrooge's array into an equivalent paper bill (a string in the manner of `@"$20"`). Look at the tests to clarify the scenario, but avoid hard coding the answer!
 
