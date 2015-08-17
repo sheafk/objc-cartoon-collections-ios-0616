@@ -18,8 +18,8 @@
 
 -(NSString *)summonCaptainPlanetWithPowers:(NSArray *)powers;
 
--(NSString *)findFirstOfPremiumCheeses:(NSArray *)premiumCheeses
-                      inCheesesInStock:(NSArray *)cheesesInStock;
+-(NSString *)firstPremiumCheeseInStock:(NSArray *)cheesesInStock
+                    premiumCheeseNames:(NSArray *)premiumCheeseNames;
 
 -(NSArray *)arrayByConvertingMoneyBagsIntoPaperBills:(NSArray *)moneyBags;
 

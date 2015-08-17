@@ -62,10 +62,10 @@
     return [NSString stringWithString:summons];
 }
 
-- (NSString *)findFirstOfPremiumCheeses:(NSArray *)premiumCheeses
-                       inCheesesInStock:(NSArray *)cheesesInStock {
+- (NSString *)firstPremiumCheeseInStock:(NSArray *)cheesesInStock
+                     premiumCheeseNames:(NSArray *)premiumCheeseNames {
     
-    for (NSString *premiumCheese in premiumCheeses) {
+    for (NSString *premiumCheese in premiumCheeseNames) {
         if ([cheesesInStock containsObject:premiumCheese]) {
             return premiumCheese;
         }
