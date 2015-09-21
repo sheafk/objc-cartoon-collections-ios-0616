@@ -86,6 +86,7 @@ describe(@"FISAppDelegate", ^{
                 
                 captainPlanetSummons = @"Let our powers combine:\nEARTH!\nFIRE!\nWIND!\nWATER!\nHEART!\nGo Planet!";
             });
+
             it(@"returns an NSString object",^{
                 expect([appDelegate summonCaptainPlanetWithPowers:powersToBeCombined]).to.beKindOf([NSString class]);
             });
@@ -111,6 +112,7 @@ describe(@"FISAppDelegate", ^{
                                     camembert        ,
                                     @"string cheese" ];
             });
+            
             it(@"returns an NSString object",^{
                 expect([appDelegate firstPremiumCheeseInStock:cheesesInStock
                                            premiumCheeseNames:premiumCheeses]).to.beKindOf([NSString class]);
