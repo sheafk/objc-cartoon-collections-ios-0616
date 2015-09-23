@@ -1,10 +1,4 @@
-//
 //  FISAppDelegateSpec.m
-//  cartoonCollections
-//
-//  Created by Chris Gonzales on 9/29/14.
-//  Copyright 2014 Joe Burgess. All rights reserved.
-//
 
 #import "Specta.h"
 #import "FISAppDelegate.h"
