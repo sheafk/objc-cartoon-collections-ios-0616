@@ -45,3 +45,5 @@ Navigate to the `FISAppDelegate.m` implementation file and declare each method t
 [captain_planet]: https://en.wikipedia.org/wiki/Captain_Planet_and_the_Planeteers
 [tom_and_jerry]: https://en.wikipedia.org/wiki/Tom_and_Jerry
 [scrooge_mcduck]: https://en.wikipedia.org/wiki/Scrooge_McDuck
+
+<a href='https://learn.co/lessons/objc-cartoon-collections' data-visibility='hidden'>View this lesson on Learn.co</a>
