@@ -46,4 +46,4 @@ Navigate to the `FISAppDelegate.m` implementation file and declare each method t
 [tom_and_jerry]: https://en.wikipedia.org/wiki/Tom_and_Jerry
 [scrooge_mcduck]: https://en.wikipedia.org/wiki/Scrooge_McDuck
 
-<a href='https://learn.co/lessons/objc-cartoon-collections' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-cartoon-collections' title='Cartoon Collections'>Cartoon Collections</a> on Learn.co and start learning to code for free.</p>
